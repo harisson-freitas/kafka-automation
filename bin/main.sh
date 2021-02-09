@@ -210,7 +210,12 @@ all() {
     export CONSUMER='S'
     export CREATE='S'
     export DELETE='S'
-    export PRODUCER='S'${PATH_DOCKER}/json####################################
+    export PRODUCER='S'
+    export VALIDATE_TOPIC='S'
+    ${SCRIPT_MENU}
+}
+
+##################################################################
 # Selecionar o tipo de função a ser carregada.
 # Local:
 #   None

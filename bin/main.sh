@@ -78,17 +78,17 @@ config() {
     export ZKS='localhost:2181'
 
     if [[ $IS_DOCKER == 'N' ]]; then
-        export PATH_MAIN="${HOME}/Documentos/ops/kafka-automation-us"
-        export PATH_KAFKA="${HOME}/kafka"
-        export PATH_JSON="${HOME}/Documentos/ops/testes/json"
-        export PATH_OUT="${HOME}/Documentos/ops/testes"
+        export PATH_MAIN=""
+        export PATH_KAFKA=""
+        export PATH_JSON=""
+        export PATH_OUT=""
    
     elif [[ IS_DOCKER == 'S' ]]; then
-        export PATH_MAIN="/home/harissonfreitas/Documentos/ops/kafka-automation-us"
-        export PATH_DOCKER="/home/harissonfreitas/Documentos/ops/kafka-docker"
+        export PATH_MAIN="/mnt/c/Users/harisson.freitas/kafka-automation-us"
+        export PATH_DOCKER="/home/harisson/Documentos/ops/kafka-docker"
         export PATH_DATA="/ops/json"
         export PATH_JSON="${PATH_DOCKER}/json"
-        export SO='L'
+        export SO='W'
     
     else
         echo "Valor inválido..."

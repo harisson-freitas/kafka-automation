@@ -67,15 +67,15 @@ config() {
     export COUNT=0
     export IS_DOCKER=''
 
-    export SCRIPT_KAFKA='./bin/kafka.sh'
-    export SCRIPT_CONSUMER='./bin/consumer.sh'
-    export SCRIPT_MENU='./bin/menu.sh'
-    export SCRIPT_PRODUCER='./bin/producer.sh'
-    export SCRIPT_SEND='./bin/send.sh'
+    export SCRIPT_KAFKA="./bin/kafka.sh"
+    export SCRIPT_CONSUMER="./bin/consumer.sh"
+    export SCRIPT_MENU="./bin/menu.sh"
+    export SCRIPT_PRODUCER="./bin/producer.sh"
+    export SCRIPT_SEND="./bin/send.sh"
 
-    export TOPIC=''
-    export BROKER=''
-    export ZKS=''
+    export TOPIC=""
+    export BROKER=""
+    export ZKS=""
 
     if [[ $IS_DOCKER == 'N' ]]; then
         export PATH_MAIN=""

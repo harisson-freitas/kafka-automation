@@ -65,7 +65,7 @@ config() {
     export COLOR_INVALID=$(echo "\033[01;31m")
 
     export COUNT=0
-    export IS_DOCKER='S'
+    export IS_DOCKER=''
 
     export SCRIPT_KAFKA='./bin/kafka.sh'
     export SCRIPT_CONSUMER='./bin/consumer.sh'
@@ -73,22 +73,22 @@ config() {
     export SCRIPT_PRODUCER='./bin/producer.sh'
     export SCRIPT_SEND='./bin/send.sh'
 
-    export TOPIC='arquitetura.local.carga.v1'
-    export BROKER='localhost:9092'
-    export ZKS='localhost:2181'
+    export TOPIC=''
+    export BROKER=''
+    export ZKS=''
 
     if [[ $IS_DOCKER == 'N' ]]; then
-        export PATH_MAIN="${HOME}/Documentos/ops/kafka-automation-us"
-        export PATH_KAFKA="${HOME}/kafka"
-        export PATH_JSON="${HOME}/Documentos/ops/testes/json"
-        export PATH_OUT="${HOME}/Documentos/ops/testes"
+        export PATH_MAIN=""
+        export PATH_KAFKA=""
+        export PATH_JSON=""
+        export PATH_OUT=""
    
     elif [[ IS_DOCKER == 'S' ]]; then
-        export PATH_MAIN="/home/harissonfreitas/Documentos/ops/kafka-automation-us"
-        export PATH_DOCKER="/home/harissonfreitas/Documentos/ops/kafka-docker"
-        export PATH_DATA="/ops/json"
-        export PATH_JSON="${PATH_DOCKER}/json"
-        export SO='L'
+        export PATH_MAIN=""
+        export PATH_DOCKER=""
+        export PATH_DATA=""
+        export PATH_JSON=""
+        export SO=''
     
     else
         echo "Valor inválido..."
@@ -210,12 +210,7 @@ all() {
     export CONSUMER='S'
     export CREATE='S'
     export DELETE='S'
-    export PRODUCER='S'
-    export VALIDATE_TOPIC='S'
-    ${SCRIPT_MENU}
-}
-
-##################################################################
+    export PRODUCER='S'${PATH_DOCKER}/json####################################
 # Selecionar o tipo de função a ser carregada.
 # Local:
 #   None

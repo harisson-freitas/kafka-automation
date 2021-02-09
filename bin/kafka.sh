@@ -1,36 +1,74 @@
 #!/bin/bash
 
+################################################################
+# Author: Harisson Freitas∴
+# E-mail: "harisson.freitas@zallpy.com"
+# Criado em: 22/01/2021
+################################################################
+
 ############################################################
-# Processo de teste para envio de 
-# eventos/mensagens para um tópico no 
+# Processo de teste para envio de
+# eventos/mensagens para um tópico no
 # Kafka - Listar, criar e excluir tópico,
 # e carregar script para postar mensagens
 # no tópico.
 ############################################################
 
 ###########################################################
+# Acessar o diretório principal do projeto.
+# Local:
+#    None
+# Globais:
+#   None
+# Argumentos:
+#   None
+# Retorno:
+#   None
+############################################################
+access_main() {
+    cd ${PATH_MAIN}
+}
+
+###########################################################
+# Acessar o diretório padrão do Kafka.
+# Local:
+#    None
+# Globais:
+#   None
+# Argumentos:
+#   None
+# Retorno:
+#   None
+############################################################
+access_kafka() {
+    if [[ $IS_DOCKER == 'N' ]]; then
+        cd ${PATH_KAFKA}
+    fi
+}
+
+###########################################################
 # Listar tópicos.
 # Local:
 #    None
 # Globais:
-#   None 
+#   None
 # Argumentos:
 #   None
 # Retorno:
 #   Lista de tópicos se existirem, ou nulo
-#   se não houver nenhum tópico criado. 
+#   se não houver nenhum tópico criado.
 ############################################################
 list_topic() {
-      [[ $IS_DOCKER == 'N' ]] \
-      && bin/kafka-topics.sh --zookeeper ${ZKS} --list \
-      || docker exec zookeeper bash -c "kafka-topics --zookeeper ${ZKS} --list"
+    [[ $IS_DOCKER == 'N' ]] &&
+        bash -c "bin/kafka-topics.sh --zookeeper ${ZKS} --list" ||
+        docker exec zookeeper bash -c "kafka-topics --zookeeper ${ZKS} --list"
 }
 
 ############################################################
-# Verificar se o tópico já existe, se 
-# existir realiza a exclusão.
+# Verificar se o tópico já existe, se existir realiza a
+# exclusão.
 # Local:
-#   _list -> Lista de tópicos  
+#   None
 # Globais:
 #   None
 # Argumentos:
@@ -54,29 +92,28 @@ has_topic() {
 # Argumentos:
 #   None
 # Retorno:
-#   None 
+#   None
 ###########################################################
 create_topic() {
     echo "*******CRIAÇÃO DE TÓPICO******"
     echo "Data criação:$(date)"
-  
+
     if [[ $IS_DOCKER == 'N' ]]; then
-        bin/kafka-topics.sh --create --zookeeper ${ZKS} \
-        --replication-factor 1 --partitions 1 --topic ${TOPIC}
-    elif [[ $IS_DOCKER == 'S' ]]; then
-        docker exec zookeeper\
-        bash -c "kafka-topics --create --zookeeper ${ZKS} \
+        bash -c "bin/kafka-topics.sh --create --zookeeper ${ZKS} \
         --replication-factor 1 --partitions 1 --topic ${TOPIC}"
-    fi 
+    elif [[ $IS_DOCKER == 'S' ]]; then
+        docker exec zookeeper bash -c "kafka-topics --create --zookeeper ${ZKS} \
+        --replication-factor 1 --partitions 1 --topic ${TOPIC}"
+    fi
 
     echo "*******FIM CRIAÇÃO*******"
-    echo "" 
+    echo ""
 }
 
 ##############################################################
 # Excluir tópico.
 # Local:
-#   None  
+#   None
 # Globais:
 #   None
 # Argumentos:
@@ -86,19 +123,19 @@ create_topic() {
 ##############################################################
 delete() {
     if [[ $IS_DOCKER == 'N' ]]; then
-        bin/kafka-topics.sh \
-        --zookeeper ${ZKS} --delete --topic ${TOPIC}
+        bash -c "bin/kafka-topics.sh \
+        --zookeeper ${ZKS} --delete --topic ${TOPIC}"
     elif [[ $IS_DOCKER == 'S' ]]; then
         docker exec zookeeper \
-        bash -c "kafka-topics --zookeeper ${ZKS} \
+            bash -c "kafka-topics --zookeeper ${ZKS} \
         --delete --topic ${TOPIC}"
-    fi 
+    fi
 }
 
 ##############################################################
 # Validar exclusão de tópico através.
 # Local:
-#   _list -> Lista de tópicos  
+#   _list -> Lista de tópicos
 # Globais:
 #   None
 # Argumentos:
@@ -108,61 +145,57 @@ delete() {
 ##############################################################
 delete_topic() {
     _list=$(list_topic)
-  
-    for i in $_list
-    do
-      if [[ $i == $TOPIC ]]; then
-          echo ""
-          echo "*******EXCLUSÃO DE TÓPICO******"
-          echo "Data exclusão:$(date)"
-          echo "Excluir: ${i}"
-          delete
-          echo "*******FIM EXCLUSÃO*******"
-          echo ""
-      fi
+
+    for i in $_list; do
+        if [[ $i == $TOPIC ]]; then
+            echo ""
+            echo "*******EXCLUSÃO DE TÓPICO******"
+            echo "Data exclusão:$(date)"
+            echo "Excluir: ${i}"
+            delete
+            echo "*******FIM EXCLUSÃO*******"
+            echo ""
+        fi
     done
-  
 }
 
 ################################################################
-# Enviar mensagem para o tópico através da variável 
-# $SCRIPT_PRODUCER; 
+# Enviar mensagem para o tópico através da variável
+# $SCRIPT_PRODUCER;
 # Local:
 #   None
 # Globais:
 #   None
 # Argumentos:
-#   $1 -> Tipo de teste: 
-#         [ST - send_by_time],
-#         [SQ - send_by_quantity], 
+#   $1 -> Tipo de teste:
+#         [ST - send_by_time];
+#         [SQ - send_by_quantity];
 #         [SS - send_by_seq];
+#         [SJ - send_by_json].
 #   $2 -> Dependendo do teste, pode ser:
-#         [ST - tempo],
-#         [SQ - quantidade],
+#         [ST - tempo];
+#         [SQ - quantidade];
 #         [SS - iterações].
-#   $3 -> Conteúdo da mensagem para os 
+#   $3 -> Conteúdo do arquivo .json ou mensagem para os
 #         testes por tempo e quantidade;
 # Retorno:
-#   None 
+#   None
 ##################################################################
 send() {
-    if [[ $IS_DOCKER == 'N' ]]; then 
-        cd ${PATH_MAIN}
-    fi 
+    access_main
 
     echo "*******CARGA/ENVIO DE MENSAGENS: TOPICOS KAFKA********"
+
     ${SCRIPT_SEND} $1 $2 $3
     echo "*******FIM CARGA*******"
     echo ""
 
-    if [[ $IS_DOCKER == 'N' ]]; then 
-        cd ${PATH_KAFKA}
-    fi 
+    access_kafka
 }
 
 ################################################################
-# Consumir mensagem(ns) fo tópico através da variável 
-# $SCRIPT_CONSUMER; 
+# Consumir mensagem(ns) fo tópico através da variável
+# $SCRIPT_CONSUMER;
 # Local:
 #   None
 # Globais:
@@ -170,27 +203,22 @@ send() {
 # Argumentos:
 #   None
 # Retorno:
-#   None 
+#   None
 ##################################################################
 consume() {
-    if [[ $IS_DOCKER == 'N' ]]; then 
-        cd ${PATH_MAIN}
-    fi
+    access_main
 
     echo "*******CONSUMO DE MENSAGENS: TOPICOS KAFKA********"
     ${SCRIPT_CONSUMER}
     echo "*******FIM CONSUMO*******"
     echo ""
-    
-    if [[ $IS_DOCKER == 'N' ]]; then 
-        cd ${PATH_KAFKA}
-    fi 
 
+    access_kafka
 }
 
 ###################################################################
-# Carregar às funções create_topic(), 
-# send() e delete_topic().
+# Carregar às funções create_topic(), consume(), send() e
+# delete_topic().
 # Local:
 #   None
 # Globais:
@@ -198,36 +226,37 @@ consume() {
 # Argumentos:
 #   $1 -> Tipo de teste
 #   $2 -> Unidade(tempo e quantidade)
-#   $3 -> Mensagem
+#   $3 -> Arquivo .json ou mensagem
 # Retorno:
-#   None 
+#   None
 ###################################################################
 load() {
-    [[ $CREATE == 'S' ]] && create_topic || echo "Criar tópico desabilitado!" 
-    [[ $PRODUCER == 'S' ]] && send $1 $2 $3 || echo "Produzir mensagem desabilitado"
+    if [[ $VALIDATE_TOPIC == 'S' ]]; then
+        has_topic
+    fi
+
+    [[ $CREATE == 'S' ]] && create_topic || echo "Criar tópico desabilitado!"
+    [[ $PRODUCER == 'S' ]] && send $1 $2 $3 || echo "Produzir mensagem desabilitado!"
     [[ $CONSUMER == 'S' ]] && consume || echo "Consumir mensagem desabilitado!"
     [[ $DELETE == 'S' ]] && delete_topic || echo "Excluir tópico desabilitado!"
 }
 
 ###################################################################
-# Carregar às funções has_topic() e load().
+# Carregar às funções access_kafka(), has_topic() e load().
 # Local:
-#   None 
+#   None
 # Globais:
 #   None
 # Argumentos:
 #   $1 -> Tipo de teste
 #   $2 -> Unidade(tempo e quantidade)
-#   $3 -> Mensagem
+#   $3 -> Arquivo .json ou mensagem
 # Retorno:
-#   None 
+#   None
 ####################################################################
 main() {
-    if [[ $IS_DOCKER == 'N' ]]; then 
-        cd ${PATH_KAFKA}
-    fi 
-
-    has_topic
+    clear
+    access_kafka
     load $1 $2 $3
 }
 

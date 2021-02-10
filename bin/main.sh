@@ -83,7 +83,7 @@ config() {
         export PATH_JSON=""
         export PATH_OUT=""
    
-    elif [[ IS_DOCKER == 'S' ]]; then
+    elif [[ $IS_DOCKER == 'S' ]]; then
         export PATH_MAIN=""
         export PATH_DOCKER=""
         export PATH_DATA=""

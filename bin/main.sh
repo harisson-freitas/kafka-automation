@@ -83,7 +83,7 @@ config() {
         export PATH_JSON=""
         export PATH_OUT=""
    
-    elif [[ IS_DOCKER == 'S' ]]; then
+    elif [[ $IS_DOCKER == 'S' ]]; then
         export PATH_MAIN="/mnt/c/Users/harisson.freitas/kafka-automation-us"
         export PATH_DOCKER="/home/harisson/Documentos/ops/kafka-docker"
         export PATH_DATA="/ops/json"

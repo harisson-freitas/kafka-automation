@@ -8,13 +8,15 @@
 - Linux
 - Windows
 
+## Pré-requisitos
+ - **_build-essential(Make)_**
+ - **_jq_**
+ - **_docker_**(Obrigatório para Windows)
+
 ## Utilização
  - Local(Linux)
  - Docker(Linux/Windows)
  - Ambiente de TST
-
-## Dependências
-
 
 ## Configuração Ambiente Linux
 Os ambientes(SO) linux que forma homologados:

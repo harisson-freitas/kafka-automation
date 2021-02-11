@@ -6,8 +6,8 @@
 ## Configurações
 - [Pré-requisitos](#Pré-requisitos)
 - [Ambiente](#Configuração-Ambiente) 
-- [Linux](#Configuração Linux)
-- [Windows](#Configuração Windows)
+- [Linux](#Configuração-Linux)
+- [Windows](#Configuração-Windows)
 
 ## Utilização
 - Local(Linux)
@@ -15,9 +15,9 @@
 - Ambiente de TST
 
 ## Pré-requisitos
- - [**_build-essential(Make)_**](#Instalando Build Essential)
- - [**_jq_**](#Instalando jq)
- - [**_docker_**(Obrigatório para Windows)](#Instalando Docker)
+ - [**_build-essential(Make)_**](#Instalando-Build-Essential)
+ - [**_jq_**](#Instalando-jq)
+ - [**_docker_**(Obrigatório para Windows)](#Instalando-Docker)
 
 <br/>OBS: Para às instalações e configurações acima, se estiver utilizando o **_Windows_** deve-se cofigurar o Bash Shell de alguma das
 <br/>distribuições de **_Linux_** homologadas.   
@@ -46,7 +46,7 @@ O jq é um processador JSON de linha de comando leve e flexível, sendo como sed
 Docker é uma plataforma de código aberto, desenvolvido na linguagem Go e criada pelo próprio Docker.Inc. 
 <br/>Por ser de alto desempenho, o software garante maior facilidade na criação e administração de ambientes isolados, 
 <br/>garantindo a rápida disponibilização de programas para o usuário final.
-<br/> Processo de instalação: https://docs.docker.com/engine/install/
+<br/> Processo de instalação [aqui](#https://docs.docker.com/engine/install/)
 
 ## Configuração Ambiente
 Antes de executar os testes, é necessário realizar às seguintes configurações:
@@ -88,7 +88,7 @@ Basicamente no linux, foram homologados às seguindes distribuições:
 
 No Linux podemos tanto executar o server do Kafka localmente, quando dentro de um container docker. Porém ao optar pelo uso do **_DOCKER_**,
 <br/>teremos que realizar à seguinte configuração:<br/>
-- Ter o [docker](#Instalando Docker) e docker-compose(opcional) instalados;
+- Ter o [docker](#Instalando-Docker) e docker-compose(opcional) instalados;
 - Permissão para poder executar o comandos como root dentro do container:
   - Execute em seu terminal o comando `sudo visudo`;
   - Adicione o path do projeto kafka-automation na variável _**secuta_path**_, no meu caso o meu path é<br/> 

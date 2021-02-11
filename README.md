@@ -4,16 +4,15 @@
 </p>
 
 ## Configurações
-- [The problem](#the-problem)
 - [Pré-requisitos](#Pré-requisitos)
 - Ambiente 
 - Linux
 - Windows
 
 ## Pré-requisitos
- - **_build-essential(Make)_**
- - **_jq_**
- - **_docker_**(Obrigatório para Windows)
+ - [**_build-essential(Make)_**](#Instalando Build Essential)
+ - [**_jq_**](#Instalando jq)
+ - [**_docker_**(Obrigatório para Windows)](#Instalando Docker)
 
 ## Instalando Build Essential
  O build-essential é necessário para que tenhamos como executar o comando **_make_**(GNU Make) referente ao arquivo **_Makefile_**;

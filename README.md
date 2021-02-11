@@ -86,8 +86,8 @@ Basicamente no linux, foram homologados às seguindes distribuições:
 - Fedora 28.+(_A partir do fedora 32 há uma serie de conflitos com a engine do docker, sendo priorizado o uso do **podman**, 
   <br/> nesse caso oriento a não subir o server do Kafka através do docker_).<br/>
 
-No Linux podemos tanto executar o server do Kafka localmente, quando dentro de um container docker. Porém ao optar pelo uso do **_DOCKER_**,
-<br/>teremos que realizar à seguinte configuração:<br/>
+No Linux podemos tanto executar o server do Kafka localmente, quando dentro de um container docker. 
+Porém ao optar pelo uso do **_DOCKER_** teremos que realizar à seguinte configuração:<br/>
 - Ter o [docker](#Instalando-Docker) e docker-compose(opcional) instalados;
 - Permissão para poder executar o comandos como root dentro do container:
   - Execute em seu terminal o comando `sudo visudo`;

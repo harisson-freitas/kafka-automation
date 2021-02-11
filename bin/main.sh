@@ -76,20 +76,16 @@ config() {
     export TOPIC=""
     export BROKER=""
     export ZKS=""
+    export PATH_MAIN=""
+    export PATH_JSON=""
 
     if [[ $IS_DOCKER == 'N' ]]; then
-        export PATH_MAIN=""
         export PATH_KAFKA=""
-        export PATH_JSON=""
         export PATH_OUT=""
-   
     elif [[ $IS_DOCKER == 'S' ]]; then
-        export PATH_MAIN=""
         export PATH_DOCKER=""
         export PATH_DATA=""
-        export PATH_JSON=""
         export SO=''
-    
     else
         echo "Valor inválido..."
     fi

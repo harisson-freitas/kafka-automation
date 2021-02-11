@@ -17,7 +17,7 @@ producer = PT
 consumer = CT
 
 #######################################################################
-# Váriáveis para definir o tipo de teste.
+# Variáveis para definir o tipo de teste.
 # ST -> Envio de mensagens dentro de um período configurado em segundos;
 # SQ -> Envio de mensagens com um valor de incremento definido;
 # SS -> Envio de mensagens com um valor de incremento definido por "seq";

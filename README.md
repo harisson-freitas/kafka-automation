@@ -4,7 +4,8 @@
 </p>
 
 ## Configurações
-- Pré-requisitos
+- [The problem](#the-problem)
+- [Pré-requisitos](#Pré-requisitos)
 - Ambiente 
 - Linux
 - Windows

@@ -5,7 +5,7 @@
 
 ## Configurações
 - [Pré-requisitos](#Pré-requisitos)
-- [Ambiente](#Configuração Ambiente) 
+- [Ambiente](#Configuração-Ambiente) 
 - [Linux](#Configuração Linux)
 - [Windows](#Configuração Windows)
 

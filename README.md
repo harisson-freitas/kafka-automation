@@ -126,8 +126,8 @@ No Linux podemos tanto executar o server do Kafka localmente, quando dentro de u
     #includedir /etc/sudoers.d
     ```
 Para ambos(**_Local/Docker_**), realiza-se à seguinte configuração:
-- Ter instalado o [**_build essential_**](#Instalando Build Essential);
-- Ter instalado o [**_jq_**](#Instalando jq);  
+- Ter instalado o [**_build essential_**](#Instalando-Build-Essential);
+- Ter instalado o [**_jq_**](#Instalando-jq);  
 - Dar permissão e tornar os scripts executáveis:
    - Através do terminal, acessar o diretório do projeto e executar o comando: `make config`;
     <br/> Basicamente será executado um `chmod +x bin/*.sh` permitndo que os arquivos .sh
@@ -140,13 +140,10 @@ Basicamente no Windows o server do Kafka foi executado em um container docker, e
 Para realizar o processo de configuração no Windows, precisamos basicamente:
 - Instalar o [WSL/WSL2](#https://docs.microsoft.com/pt-br/windows/wsl/install-win10) depende do build da versão do Windows
   <br/> e instalando um bash de acordo com às versões homologadas para Linux;
-- Ter o [docker](#Instalando Docker) instalado;
-- Ter instalado o [**_build essential_**](#Instalando Build Essential);
-- Ter instalado o [**_jq_**](#Instalando jq);   
+- Ter o [docker](#Instalando-Docker) instalado;
+- Ter instalado o [**_build essential_**](#Instalando-Build-Essential);
+- Ter instalado o [**_jq_**](#Instalando-jq);   
 - Dar permissão e tornar os scripts executáveis:
     - Através do terminal, acessar o diretório do projeto e executar o comando: `make config`;
       <br/> Basicamente será executado um `chmod +x bin/*.sh` permitndo que os arquivos .sh
       <br/> sejam executáveis.
-
-  
-

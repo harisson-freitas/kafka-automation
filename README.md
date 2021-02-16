@@ -212,7 +212,7 @@ Após realizar às configurações descritas anteriormente, seguem os passos par
 - Executar o container com o server do **_zookeeper_**;
 - Executar o container com o server do **_kafka_**;
 
-## Execução Completa: Start
+## Execução Completa:Start
 Para a execução do fluxo completo, executar o seguinte comando:
 - Se estiver rodando dentro de um container docker: `sudo make start`, porém se estiver rodando local somente `make start`; 
   <br/>Em ambos os casos irá abrir o painel abaixo:<br/>

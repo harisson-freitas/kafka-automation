@@ -265,7 +265,7 @@ Basicamente temos 4 tipos de testes:
    ![text](img/json.png)
 
 OBS: **Para os testes por período e por quantidade que não use seq, também podem ser enviados arquivos json, 
-<br/>porém em uma certa etapa dos testes os mesmos irão repetir os valores interados para envio.**
+<br/>porém em uma certa etapa dos testes os mesmos irão repetir os valores iterados para envio.**
 
 ## Execução Fracionada
 Além dos testes completos listados acima, podemos realizar os seguintes testes de forma separada:

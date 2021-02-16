@@ -213,21 +213,21 @@ Após realizar às configurações descritas anteriormente, seguem os passos par
 Para a execução do fluxo completo, executar o seguinte comando:
 - Se estiver rodando dentro de um container docker: `sudo make start`, porém se estiver rodando local somente `make start`; 
   <br/>Em ambos os casos irá abrir o painel abaixo:<br/>
-  ![text](img/Screenshot_20210211_205943.png)
+  ![text](img/menu.png)
   
 Basicamente temos 4 tipos de testes:
 - Período de **_tempo_**: O usuário define em minutos a quantidade de tempo que quer que sejam enviadas e consumidas às mensagens do tópico.
 <br/> Nesse cenário ocorre a criação do tópico, o envio e consumo de mensagens e a exclusão do tópico, conforme abaixo:
-  ![text](img/timeC.png)
+  ![text](img/time.png)
   
 - Por **_quantidade_** de iterações definidas: O usuário define uma quantidade de iterações para o envio e consumo de mensagens do tópico.
   <br/> Nesse cenário ocorre a criação do tópico, o envio e consumo de mensagens e a exclusão do tópico, conforme abaixo:
-  ![text](img/quantidadeC.png)
+  ![text](img/quantidade.png)
   
 - Por **_quantidade_** de iterações definidas utilizando **_seq_**: O usuário define uma quantidade de iterações, porém aqui não é informado um valor</br>
 para a mensagem, o conteúdo da mensagem é proveniente da quantidade de iterações definidas.
   <br/> Nesse cenário ocorre a criação do tópico, o envio e consumo de mensagens e a exclusão do tópico, conforme abaixo:
-  ![text](img/quantidadeSeqC.png)
+  ![text](img/quantidadeSeq.png)
 
 - Por arquivo **_.json_**: O usuário pode enviar suas mensagens através de um arquivo JSON no seguinte formato:
   ```
@@ -258,7 +258,7 @@ para a mensagem, o conteúdo da mensagem é proveniente da quantidade de iteraç
      }
      ```
    <br/>Nesse cenário ocorre a criação do tópico, o envio e consumo de mensagens e a exclusão do tópico, conforme abaixo:
-   ![text](img/jsonC.png)
+   ![text](img/json.png)
 
 Observação: **Para os testes por período e por quantidade que não use seq, também podem ser enviados arquivos json, 
 <br/>porém em uma certa etapa dos testes os mesmos irão repetir os valores interados para envio.**

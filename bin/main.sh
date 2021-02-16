@@ -65,7 +65,7 @@ config() {
     export COLOR_INVALID=$(echo "\033[01;31m")
 
     export COUNT=0
-    export IS_DOCKER='S'
+    export IS_DOCKER='N'
 
     export SCRIPT_KAFKA='./bin/kafka.sh'
     export SCRIPT_CONSUMER='./bin/consumer.sh'
@@ -77,19 +77,17 @@ config() {
     export BROKER='localhost:9092'
     export ZKS='localhost:2181'
 
+    #Se tiver executando em um docker, não podes utilizar a variável $HOME.s
+    export PATH_MAIN="/home/harissonfreitas/kafka-automation"
+    export PATH_JSON="${PATH_MAIN}/json"
+
     if [[ $IS_DOCKER == 'N' ]]; then
-        export PATH_MAIN="${HOME}/Documentos/ops/kafka-automation-us"
         export PATH_KAFKA="${HOME}/kafka"
-        export PATH_JSON="${HOME}/Documentos/ops/testes/json"
-        export PATH_OUT="${HOME}/Documentos/ops/testes"
-   
+        export PATH_OUT="${PATH_MAIN}"
     elif [[ $IS_DOCKER == 'S' ]]; then
-        export PATH_MAIN="/home/harissonfreitas/Documentos/ops/kafka-automation-us"
         export PATH_DOCKER="/home/harissonfreitas/Documentos/ops/kafka-docker"
         export PATH_DATA="/ops/json"
-        export PATH_JSON="${PATH_DOCKER}/json"
         export SO='L'
-    
     else
         echo "Valor inválido..."
     fi

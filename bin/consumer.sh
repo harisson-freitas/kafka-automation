@@ -204,8 +204,6 @@ consumer_in_docker() {
     else
         echo "Sistema operacional inválido!"
     fi
-    
-    echo ""
 }
 
 ###########################################################

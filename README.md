@@ -185,8 +185,8 @@ Para ambos(**_Local/Docker_**), realiza-se à seguinte configuração:
     <br/> Basicamente será executado um `chmod +x bin/*.sh` permitndo que os arquivos .sh
     <br/> sejam executáveis.
 - Se for utilizar arquivo **_.json_** para teste:
-   - criar o arquivo em um diretório local ao qual deverá ser atribuido a variável **_$PATH_JSON_**;
-   - criar o arquivo em um diretório detro do volume mapeado no docker ao qual deverá ser atribuido a variável **_$PATH_JSON_**.
+   - Local: Criar o arquivo em um diretório local ao qual deverá ser atribuido a variável **_$PATH_JSON_**;
+   - Docker: Criar o arquivo em um diretório detro do volume mapeado no docker ao qual deverá ser atribuido a variável **_$PATH_JSON_**.
 
 ## Configuração Windows
   Basicamente no Windows o server do Kafka foi executado em um container docker, e homologado na seguinte versão:

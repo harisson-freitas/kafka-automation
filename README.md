@@ -262,7 +262,7 @@ Basicamente temos 4 tipos de testes:
    <br/>Nesse cenário ocorre a criação do tópico, o envio e consumo de mensagens e a exclusão do tópico, conforme abaixo:
    ![text](img/json.png)
 
-Observação: **Para os testes por período e por quantidade que não use seq, também podem ser enviados arquivos json, 
+OBS: **Para os testes por período e por quantidade que não use seq, também podem ser enviados arquivos json, 
 <br/>porém em uma certa etapa dos testes os mesmos irão repetir os valores interados para envio.**
 
 ## Execução Fracionada

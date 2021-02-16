@@ -202,6 +202,8 @@ Para realizar o processo de configuração no Windows, precisamos basicamente:
       - Através do terminal, acessar o diretório do projeto e executar o comando: `make config`;
   <br/> Basicamente será executado um `chmod +x bin/*.sh` permitndo que os arquivos .sh
   <br/> sejam executáveis.
+- Se for utilizar arquivo **_.json_** para teste:
+   - Docker: Criar o arquivo em um diretório detro do volume mapeado no docker ao qual deverá ser atribuido a variável **_$PATH_JSON_**.
 
 ## Utilização em ambiente Linux(Local)
 Após realizar às configurações descritas anteriormente, seguem os passos para a execução:

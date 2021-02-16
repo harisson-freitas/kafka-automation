@@ -29,7 +29,7 @@ No processo de envio de mensagens, temos às seguintes opções:
  - **_Tempo_**: Define-se um período de tempo(minutos) ao qual serão enviadas mensagens para o tópico;
  - **_Quantidade_**: Define-se um valor de iterações ao qual serão envidas mensagens para o tópico;
  - **_Quantidade(Seq)_**: Define-se um valor de iterações utilizando o comando seq, no qual no corpo<br/> 
-   da mensagem o valor será o número da iteração e que será enviada para o tópico;
+   da mensagem o valor será o número da iteração que será enviada para o tópico;
  - **_Arquivo json_**: Cria-se um arquivo Json com à(s) mensagens a serem enviadas para o tópico.
 
 São utilizadas às variáveis **_$BROKER_** e **_$TOPIC_**, como endereço do **server do kafka** e<br/>

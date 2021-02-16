@@ -7,12 +7,12 @@
 O motivo pelo qual a ferramenta foi criada, foi com o intuito de facilitar no processo de testes para<br/>
 o envio e consumo mensagens, visto que em determinada ocasião necessitava realizar alguns testes<br/> 
 produzindo mensagens por um determinado período de tempo, por uma quantidade especifíca e<br/>
-através de um arquivo .json; Outro ponto que devo ressaltar, é que algumas ferramentas mais robustas</br>
+através de um arquivo .json; Outro ponto que devo ressaltar, é que algumas ferramentas mais robustas<br/>
 para esse tipo de automação como o **_Kafka Magic Tools_** só libera a funcionalidade através de uma assinatura.
 
 **_Como a ferramenta funciona?_**<br/>
 A ferramenta proprociona ao usuário 2 opções: 
-- Executar um processo completo desde a criação do tópico, envio de mensagens, consumo de mensagens</br>
+- Executar um processo completo desde a criação do tópico, envio de mensagens, consumo de mensagens<br/>
 e exclusão do tópico.
 - Executar cada uma das operações abaixo separadamente:
   - Criar tópico;
@@ -20,22 +20,22 @@ e exclusão do tópico.
   - Consumir mensagem;
   - Excluir tópico.
 
-Criar Tópico:<br/>
+**_Criar Tópico:_**<br/>
 Ao iniciar o processo de criação de um tópico, são utilizadas às variáveis **_$ZKS_** e **_$TOPIC,_**<br/>
 como endereço do **server do zookeeper** e o **nome do tópico** respectivamente.
 
-Enviar mensagem:</br>
+**_Enviar mensagem:_**<br/>
 No processo de envio de mensagens, temos às seguintes opções:
- - Tempo: Define-se um período de tempo(minutos) ao qual serão enviadas mensagens para o tópico;
- - Quantidade: Define-se um valor de iterações ao qual serão envidas mensagens para o tópico;
- - Quantidade(Seq): Define-se um valor de iterações utilizando o comando seq, no qual no corpo<br/> 
+ - **_Tempo_**: Define-se um período de tempo(minutos) ao qual serão enviadas mensagens para o tópico;
+ - **_Quantidade_**: Define-se um valor de iterações ao qual serão envidas mensagens para o tópico;
+ - **_Quantidade(Seq)_**: Define-se um valor de iterações utilizando o comando seq, no qual no corpo<br/> 
    da mensagem o valor será o número da iteração e que será enviada para o tópico;
- - Arquivo json: Cria-se um arquivo Json com à(s) mensagens a serem enviadas para o tópico.
+ - **_Arquivo json_**: Cria-se um arquivo Json com à(s) mensagens a serem enviadas para o tópico.
 
-São utilizadas às variáveis **_$BROKER_** e **_$TOPIC_**, como endereço do **server do kafka** e</br>
+São utilizadas às variáveis **_$BROKER_** e **_$TOPIC_**, como endereço do **server do kafka** e<br/>
 **nome do tópico** respectivamente.
 
-Consumir mensagem:<br/>
+**_Consumir mensagem_**:<br/>
 No processo de consumo de mensagens, são executadas às seguintes etapas:
  - Dispara o comando para consumir às mensagens;
  - Cria o diretório out se caso não existir;
@@ -43,10 +43,10 @@ No processo de consumo de mensagens, são executadas às seguintes etapas:
  - Se estiver executando no docker, irá matar o processo do docker exec;
  - Mata o processo do kafka-consumer.
 
-São utilizadas às variáveis **_$BROKER_** e **_$TOPIC_**, como endereço do **server do kafka** e</br>
+São utilizadas às variáveis **_$BROKER_** e **_$TOPIC_**, como endereço do **server do kafka** e<br/>
 **nome do tópico** respectivamente.
 
-Excluir tópico:<br/>
+**_Excluir tópico_**:<br/>
 No processo de exclusão do tópico, é verificado se o tópico existe e se existir executa a exclusão do tópico.<br/>
 São utilizadas às variáveis **_$ZKS_** e **_$TOPIC_**, como endereço do **server do zookeeper** e o **nome do tópico**<br/> 
 respectivamente.
@@ -59,9 +59,12 @@ respectivamente.
 - [Windows](#Configuração-Windows)
 
 ## Utilização
-- Local(Linux)
-- Docker(Linux/Windows)
-- Ambiente de TST
+- [Local(Linux)](#Utilização em ambiente Linux(Local))
+- [Docker(Linux/Windows)](### Utilização em ambiente Linux/Windows(Docker))
+
+## Execução
+- [Execução Completa](#Execução Completa:Start)
+- [Execução Fracionada](#Execução Fracionada)
 
 ## Pré-requisitos
  - [**_build-essential(Make)_**](#Instalando-Build-Essential)
@@ -224,7 +227,7 @@ Basicamente temos 4 tipos de testes:
   <br/> Nesse cenário ocorre a criação do tópico, o envio e consumo de mensagens e a exclusão do tópico, conforme abaixo:
   ![text](img/quantidade.png)
   
-- Por **_quantidade_** de iterações definidas utilizando **_seq_**: O usuário define uma quantidade de iterações, porém aqui não é informado um valor</br>
+- Por **_quantidade_** de iterações definidas utilizando **_seq_**: O usuário define uma quantidade de iterações, porém aqui não é informado um valor<br/>
 para a mensagem, o conteúdo da mensagem é proveniente da quantidade de iterações definidas.
   <br/> Nesse cenário ocorre a criação do tópico, o envio e consumo de mensagens e a exclusão do tópico, conforme abaixo:
   ![text](img/quantidadeSeq.png)

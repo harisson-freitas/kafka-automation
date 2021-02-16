@@ -59,12 +59,12 @@ respectivamente.
 - [Windows](#Configuração-Windows)
 
 ## Utilização
-- [Local(Linux)](#Utilização em ambiente Linux(Local))
-- [Docker(Linux/Windows)](### Utilização em ambiente Linux/Windows(Docker))
+- [Local(Linux)](#Utilização-em-ambiente-Linux(Local))
+- [Docker(Linux/Windows)](#Utilização-em-ambiente-Linux/Windows(Docker))
 
 ## Execução
-- [Execução Completa](#Execução Completa:Start)
-- [Execução Fracionada](#Execução Fracionada)
+- [Execução Completa](#Execução-Completa:Start)
+- [Execução Fracionada](#Execução-Fracionada)
 
 ## Pré-requisitos
  - [**_build-essential(Make)_**](#Instalando-Build-Essential)

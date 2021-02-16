@@ -112,8 +112,9 @@ Antes de executar os testes, é necessário realizar às seguintes configuraçõ
         | TOPIC                       | Tópico do Kafka                                                     | **_arquitetura.local.v1_**                                                                                                                                                                      |
         | BROKER                      | Endereço do broker Kafka                                            | **_localhost:9092_**                                                                                                                                                                            |
         | ZKS                         | Endereço do zookeeper                                               | **_localhost:2181_**                                                                                                                                                                            |
-        | PATH_MAIN                   | Caminho principal do projeto                                        | **_${HOME}/kafka-automation_**                                                                                                                                                                  |
-        | PATH_JSON                   | Caminho onde está o arquivo .json para teste                        | Se estiver executando fora de um container: **_${HOME}/testes/json_**; <br/>Se estiver executando dentro de um container: **_/home/harissonfreitas/kafka-docker/json_**                              |
+        | PATH_MAIN                   | Caminho principal do projeto                                        | Se estiver executando fora de um container:
+        **_${HOME}/kafka-automation_**-podes utilizar a variável $HOME; <br/>Se estiver executando dentro de um container: **_/home/harissonfreitas/kafka-automation_**|
+        | PATH_JSON                   | Caminho onde está o arquivo .json para teste                        | Se estiver executando fora de um container: **_${HOME}/testes/json_**-podes utilizar a variável $HOME; <br/>Se estiver executando dentro de um container: **_/home/harissonfreitas/kafka-docker/json_**                              |
         
      - Local - Sem Docker(Apenas para Linux):<br/>
        

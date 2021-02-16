@@ -12,13 +12,13 @@ para esse tipo de automação como o **_Kafka Magic Tools_** só libera a funcio
 
 **_Como a ferramenta funciona?_**<br/>
 A ferramenta proprociona ao usuário 2 opções: 
-- Executar um processo completo desde a criação do tópico, envio de mensagens, consumo de mensagens<br/>
-e exclusão do tópico.
+- Executar um processo completo desde a **_criação do tópico, envio de mensagens, consumo de mensagens<br/>
+e exclusão do tópico_**.
 - Executar cada uma das operações abaixo separadamente:
-  - Criar tópico;
-  - Enviar mensagem;
-  - Consumir mensagem;
-  - Excluir tópico.
+  - **_Criar tópico_**;
+  - **_Enviar mensagem_**;
+  - **_Consumir mensagem_**;
+  - **_Excluir tópico_**.
 
 **_Criar Tópico:_**<br/>
 Ao iniciar o processo de criação de um tópico, são utilizadas às variáveis **_$ZKS_** e **_$TOPIC,_**<br/>

@@ -227,8 +227,7 @@ Basicamente temos 4 tipos de testes:
   <br/> Nesse cenário ocorre a criação do tópico, o envio e consumo de mensagens e a exclusão do tópico, conforme abaixo:
   ![text](img/quantidade.png)
   
-- Por **_quantidade_** de iterações definidas utilizando **_seq_**: O usuário define uma quantidade de iterações, porém aqui não é informado um valor<br/>
-para a mensagem, o conteúdo da mensagem é proveniente da quantidade de iterações definidas.
+- Por **_quantidade_** de iterações definidas utilizando **_seq_**: O usuário define uma quantidade de iterações, porém aqui não é informado um valor para a mensagem, o conteúdo da mensagem é proveniente da quantidade de iterações definidas.
   <br/> Nesse cenário ocorre a criação do tópico, o envio e consumo de mensagens e a exclusão do tópico, conforme abaixo:
   ![text](img/quantidadeSeq.png)
 

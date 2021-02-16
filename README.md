@@ -63,7 +63,7 @@ respectivamente.
 - [Docker(Linux/Windows)](#Utilização-em-ambiente-Linux/Windows(Docker))
 
 ## Execução
-- [Execução Completa](#Execução-Completa:Start)
+- [Execução Completa](#Execução-Completa)
 - [Execução Fracionada](#Execução-Fracionada)
 
 ## Pré-requisitos
@@ -212,7 +212,7 @@ Após realizar às configurações descritas anteriormente, seguem os passos par
 - Executar o container com o server do **_zookeeper_**;
 - Executar o container com o server do **_kafka_**;
 
-## Execução Completa:Start
+## Execução Completa
 Para a execução do fluxo completo, executar o seguinte comando:
 - Se estiver rodando dentro de um container docker: `sudo make start`, porém se estiver rodando local somente `make start`; 
   <br/>Em ambos os casos irá abrir o painel abaixo:<br/>

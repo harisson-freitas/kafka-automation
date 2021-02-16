@@ -38,10 +38,10 @@ São utilizadas às variáveis **_$BROKER_** e **_$TOPIC_**, como endereço do *
 **_Consumir mensagem_**:<br/>
 No processo de consumo de mensagens, são executadas às seguintes etapas:
  - Dispara o comando para consumir às mensagens;
- - Cria o diretório out se caso não existir;
- - Cria o arquivo consumer_%Y%m%d_%H%M%S.log com o conteúdo da mensagem consumida;
- - Se estiver executando no docker, irá matar o processo do docker exec;
- - Mata o processo do kafka-consumer.
+ - Cria o diretório **_out_** se caso não existir;
+ - Cria o arquivo **_consumer_%Y%m%d_%H%M%S.log_** com o conteúdo da mensagem consumida;
+ - Se estiver executando no docker, irá matar o processo do **_docker exec_**;
+ - Mata o processo do **_kafka-consumer_**.
 
 São utilizadas às variáveis **_$BROKER_** e **_$TOPIC_**, como endereço do **server do kafka** e<br/>
 **nome do tópico** respectivamente.

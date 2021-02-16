@@ -211,7 +211,6 @@ consume() {
     echo "*******CONSUMO DE MENSAGENS: TOPICOS KAFKA********"
     ${SCRIPT_CONSUMER}
     echo "*******FIM CONSUMO*******"
-    echo ""
 
     access_kafka
 }

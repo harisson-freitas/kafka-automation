@@ -189,10 +189,10 @@ Para ambos(**_Local/Docker_**), realiza-se à seguinte configuração:
    - Docker: Criar o arquivo em um diretório detro do volume mapeado no docker ao qual deverá ser atribuido a variável **_$PATH_JSON_**.
 
 ## Configuração Windows
-  Basicamente no Windows o server do Kafka foi executado em um container docker, e homologado na seguinte versão:
+Basicamente no Windows o server do Kafka foi executado em um container docker, e homologado na seguinte versão:
 - Windows 10 <br/>
 
-  Para realizar o processo de configuração no Windows, precisamos basicamente:
+Para realizar o processo de configuração no Windows, precisamos basicamente:
 - Instalar o [WSL/WSL2](#https://docs.microsoft.com/pt-br/windows/wsl/install-win10) depende do build da versão do Windows
   <br/> e instalando um bash de acordo com às versões homologadas para Linux;
 - Ter o [docker](#Instalando-Docker) instalado;

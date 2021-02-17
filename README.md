@@ -70,6 +70,7 @@ respectivamente.
  - [**_build-essential(Make)_**](#Instalando-Build-Essential)
  - [**_jq_**](#Instalando-jq)
  - [**_docker_**(Obrigatório para Windows)](#Instalando-Docker)
+ - [**_Desabilitar criação automática de tópicos_**](#Desabilitando-a-criação-automática-de-tópicos)
 
 <br/>OBS: Para às instalações e configurações acima, se estiver utilizando o **_Windows_** deve-se cofigurar o Bash Shell de alguma das
 <br/>distribuições de **_Linux_** homologadas.   
@@ -99,6 +100,11 @@ Docker é uma plataforma de código aberto, desenvolvido na linguagem Go e criad
 <br/>Por ser de alto desempenho, o software garante maior facilidade na criação e administração de ambientes isolados, 
 <br/>garantindo a rápida disponibilização de programas para o usuário final.
 <br/> Processo de instalação [aqui](#https://docs.docker.com/engine/install/)
+
+## Desabilitando a criação automática de tópicos
+Para poder excluir um tópico sem que haja a criação automática posteriormente, é necessário realizar a configuração abaixo:
+- Kafka Local: Acessar `config/server.properties` e incluir no arquivo a seguinte propriedade: `auto.create.topics.enable=false`;
+- Kafka Docker: No processo de execução seja via `docker run` ou `docker-compose`, deve-se criar a variável `KAFKA_AUTO_CREATE_TOPICS_ENABLE: 'false'.
 
 ## Configuração Ambiente
 Antes de executar os testes, é necessário realizar às seguintes configurações:
@@ -264,8 +270,7 @@ Basicamente temos 4 tipos de testes:
    <br/>Nesse cenário ocorre a criação do tópico, o envio e consumo de mensagens e a exclusão do tópico, conforme abaixo:
    ![text](img/json.png)
 
-OBS: **Para os testes por período e por quantidade que não use seq, também podem ser enviados arquivos json, 
-<br/>porém em uma certa etapa dos testes os mesmos irão repetir os valores iterados para envio.**
+OBS: **Para os testes por período e por quantidade que não use seq, também podem ser enviados arquivos json, porém em uma certa etapa dos testes os mesmos irão repetir os valores iterados para envio.**
 
 ## Execução Fracionada
 Além dos testes completos listados acima, podemos realizar os seguintes testes de forma separada:

@@ -104,7 +104,7 @@ Docker é uma plataforma de código aberto, desenvolvido na linguagem Go e criad
 ## Desabilitando a criação automática de tópicos
 Para poder excluir um tópico sem que haja a criação automática posteriormente, é necessário realizar a configuração abaixo:
 - Kafka Local: Acessar `config/server.properties` e incluir no arquivo a seguinte propriedade: `auto.create.topics.enable=false`;
-- Kafka Docker: No processo de execução seja via `docker run` ou `docker-compose`, deve-se criar a variável `KAFKA_AUTO_CREATE_TOPICS_ENABLE: 'false'.
+- Kafka Docker: No processo de execução seja via `docker run` ou `docker-compose`, deve-se criar a variável `KAFKA_AUTO_CREATE_TOPICS_ENABLE: 'false'`.
 
 ## Configuração Ambiente
 Antes de executar os testes, é necessário realizar às seguintes configurações:
